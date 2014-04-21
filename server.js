@@ -41,8 +41,9 @@ var twit = new twitter({
 	access_token_secret: 'wfgF941yxA0xt2eg6QPUPpI2p5KBCJY3j9OOhir3gsFHF'
 });
 
-var i = 0, numTweets = 1000;
-var langs = {};
+var i = 0, numTweets = 2000;
+var langs = [0, 0, 0, 0, 0];
+var hashtags = [0, 0];
 twit.stream('statuses/sample', function(stream){
 	stream.on('error', function(error, code){
 		console.log("error: " + error + ":" + code);
@@ -70,22 +71,41 @@ twit.stream('statuses/sample', function(stream){
 			tweets.find().toArray(function(err, docs){
 					docs.forEach(function(doc){
 						setLang(doc.lang);
+						checkHashes(doc.entities.hashtags);
 					});
 					console.log(langs);
+					console.log(hashtags);
 			});
 		}
 	});
 });	
 
 function setLang(lang){
-	if(lang == "und"){
-		lang = "oth";
+	//[en, ja, es, pt, other]
+	if(lang == "en"){
+		langs[0]++;
 	}
-	if(lang in langs){
-		langs[lang]++;
+	else if(lang == "ja"){
+		langs[1]++;
+	}
+	else if(lang == "es"){
+		langs[2]++;
+	}
+	else if(lang =="pt"){
+		langs[3]++;
 	}
 	else{
-		langs[lang] = 1;
+		langs[4]++;
+	}
+}
+
+function checkHashes(hashes){
+	//[yes, no]
+	if(hashes[0] != null) {
+		hashtags[0]++;
+	}
+	else{
+		hashtags[1]++;
 	}
 }
 
@@ -97,7 +117,12 @@ app.get('/', function(req, res){
 
 app.get("/getLangObject", function(req, res){
 	res.json(langs);
-	console.log("Client Get request Successful");
+	console.log("Lang Get Request Successful");
+});
+
+app.get("/getHashObject", function(req, res){
+	res.json(hashtags);
+	console.log("Hash Get Request Succssful");
 });
 
 app.use('/resources', express.static(__dirname + '/resources'));
