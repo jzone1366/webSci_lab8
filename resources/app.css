@@ -5,9 +5,10 @@
 .drop {
 	margin-top: 20px;
 	padding-bottom: 15px;
-	background-color: rgba(0,0,0,0.10);
+	background-color: #34495E;
 	box-shadow:rgba(0,0,0,0.80) 0px 1px 3px 0px;
 	border-radius: 15px;
+	color: #BDC3C7;
 }
 .centered {
 	text-align: center;
@@ -17,7 +18,7 @@
 	margin-top: 30px;
 }
 body{
-    background-color: rgba(0,0,0,0.10);
+    background-color: #BDC3C7;
 }
 
 #tweets{
@@ -55,7 +56,6 @@ body{
 	list-style: none;
 	color: white;
 	margin-bottom: 5px;
-	/* border-radius: 5px; */
 	text-align: left;
 	padding-left: 10px;
 	height: 60px;

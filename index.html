@@ -1,15 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, intial-scale=1">
 		<title> zonej - Lab 8 </title>
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="resources/app.css" rel="stylesheet">
+	
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
 	</head>
+
 	<body>
-		<canvas id="langChart" width="400" height="400"></canvas>
-		<canvas id="hashChart" width="400" height="400"></canvas>
-		<canvas id="timeChart" width="400" height="400"></canvas>
+		<div class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"> JMZ </a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="timeViz.html">Timeline Visualization</a></li>
+						<li><a href="langViz.html">Language Visualization</a></li>
+						<li><a href="hashViz.html">Hashtag Visualization </a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--END NAVBAR -->
+
+		<div class="container">
+			<form role="form">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 drop">
+						<h1 class="centered">zonej - lab 8/9</h1>
+						<span id="alert"></span>
+						<div class="buttons text-center">
+							<button type="button" class="btn btn-primary btn-md" id="btn1">Tweets to JSON </button>
+							<button tupe="button" class="btn btn-primary btn-md" id="btn2">JSON to CSV</button>
+							<button type="button" class="btn btn-primary btn-md" id="btn3">Display Tweets </button>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div id = "tweetsContainer" class="col-xs-12 col-md-6 col-md-offset-1">
+				<ul id="tweets" class="tweeclass"></ul>	
+			</div>
+			<div id = "hashContainer" class="col-xs-6 col-md-3">
+				<ul id="hashtags" class="hashclass"></ul>	
+			</div>
+		</div>
 	</body>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
 	<script src="resources/Chart.js"></script>
 	<script src="resources/client.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
