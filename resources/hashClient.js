@@ -6,7 +6,7 @@ $.get("/getHashObject", success, "json");
 function success(hashes){
 	console.log(hashes);
 	var data2 = {
-		labels : ["Contains Hashtags", "Doesn't Contain Hashtags"],
+		labels : ["Hashtags", "No Hashtags"],
 		datasets : [
 		{
 			fillColor : "rgba(220, 220, 220, 0.5)",

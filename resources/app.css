@@ -70,3 +70,29 @@ body{
 	height: 48px;
 	border-radius: 24px;
 }
+#legend {
+	list-style: none;
+}
+.legendItem{
+	width:15px;
+	height:15px;
+	background-color: #FFF;
+	border: 2px grey solid;
+	float: left;
+	border-radius: 10px;
+}
+#en{
+	background-color: #E60000;
+}
+#ja{
+	background-color: #E0E4CC;
+}
+#sp{
+	background-color: #69D2E7;
+}
+#pt{
+	background-color: #1FCF00;
+}
+#other{
+	background-color: #FF33FC;
+}

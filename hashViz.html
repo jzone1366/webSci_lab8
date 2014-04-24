@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>zonej - lab 8 | Timeline Visualiztion</title>
+		<title>zonej - lab 8 | Hashtag Visualization</title>
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link href="resources/app.css" rel="stylesheet">
 	
@@ -37,7 +37,13 @@
 		</div>
 		<!-- END NAVBAR -->
 		<div class="container">
-			<canvas id="hashChart" width="400" height="400"></canvas>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h2 class="centered"> Hashtag Visualization </h2>
+					<p class="centered"> This visualization shows the number of tweets that contain hashtags and that don't contain hashtags. </p>
+					<canvas id="hashChart" width="400" height="400"></canvas>
+				</div>
+			</div>
 		</div>
 	</body>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>

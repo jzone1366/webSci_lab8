@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>zonej - lab 8 | Timeline Visualiztion</title>
+		<title>zonej - lab 8 | Language Visualization</title>
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<link href="resources/app.css" rel="stylesheet">
 	
@@ -37,7 +37,26 @@
 		</div>
 		<!-- END NAVBAR -->
 		<div class="container">
-			<canvas id="langChart" width="400" height="400"></canvas>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h2 class="centered"> Language Visualization </h2>
+					<p class="centered"> This visualization compares the languages of the tweets that are being read into the database. </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-2">
+					<canvas id="langChart" width="400" height="400"></canvas>
+				</div>
+				<div class="col-md-3">
+					<ul id="legend">
+						<li><div class="legendItem row" id="en"></div>English</li>
+						<li><div class="legendItem row" id="ja"></div>Japanese</li>
+						<li><div class="legendItem row" id="sp"></div>Spanish</li>
+						<li><div class="legendItem row" id="pt"></div>Portuguese</li>
+						<li><div class="legendItem row" id="other"></div>Other</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</body>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
